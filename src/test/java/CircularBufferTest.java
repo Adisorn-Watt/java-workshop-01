@@ -65,6 +65,4 @@ public class CircularBufferTest {
         boolean result = cb.isItEqualtoCurrentSize(newBufferSize);
         assertTrue("This isn't set to new size yet", result);
     }
-
-
 }
