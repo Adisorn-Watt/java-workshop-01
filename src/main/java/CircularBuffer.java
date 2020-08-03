@@ -5,7 +5,15 @@ public class CircularBuffer {
     private int writePointer;
 
     public boolean isEmpty() {
-        return bufferSize == 10;
+        //return bufferSize == 10;
+        for(int i=0; i<10; i++) {
+            if(this.buffer[readPointer] == null) {
+                readPointer++;
+            }else {
+                return false;
+            }
+        }
+        return readPointer == 10;
     }
 
     public void writeData(String input) {

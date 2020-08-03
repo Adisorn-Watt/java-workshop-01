@@ -7,7 +7,7 @@ public class CircularBufferTest {
     public void create_new_buffer_should_empty() {
         CircularBuffer cb = new CircularBuffer();
         boolean result = cb.isEmpty();
-        assertTrue("Buffer not available", result);
+        assertTrue("Buffer have some stuff in it", result);
     }
 
     @Test
