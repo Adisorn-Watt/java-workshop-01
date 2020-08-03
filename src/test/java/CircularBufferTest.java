@@ -21,7 +21,7 @@ public class CircularBufferTest {
     }
 
     @Test
-    public void write_A_to_buffer_should_read_A_B() {
+    public void write_A_B_to_buffer_should_read_A_B() {
         CircularBuffer cb = new CircularBuffer();
         cb.writeData("A");
         cb.writeData("B");
@@ -29,4 +29,12 @@ public class CircularBufferTest {
         assertEquals("B", cb.readData());
     }
 
+    @Test
+    public void write_A_read_A_then_write_B_read_B() {
+        CircularBuffer cb = new CircularBuffer();
+        cb.writeData("A");
+        assertEquals("A", cb.readData());
+        cb.writeData("B");
+        assertEquals("B", cb.readData());
+    }
 }
