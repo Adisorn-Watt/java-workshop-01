@@ -37,4 +37,16 @@ public class CircularBufferTest {
         cb.writeData("B");
         assertEquals("B", cb.readData());
     }
+
+    @Test
+    public void buffer_should_be_overwritten_at_buffer_size_10_by_writing_11_times() {
+        CircularBuffer cb = new CircularBuffer();
+        for(int i=0; i<10; i++) {
+            cb.writeData("A" + i);
+        }
+        cb.writeData("Z");
+        assertEquals("Z", cb.readData());
+    }
+
+
 }
