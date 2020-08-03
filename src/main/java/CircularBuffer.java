@@ -23,4 +23,12 @@ public class CircularBuffer {
     public String readData() {
         return this.buffer[readPointer++];
     }
+
+    public void setSize(int newBufferSize) {
+        this.buffer = new String[newBufferSize];
+    }
+
+    public boolean isItEqualtoCurrentSize(int newBufferSize) {
+        return this.buffer.length == newBufferSize;
+    }
 }

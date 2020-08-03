@@ -57,5 +57,14 @@ public class CircularBufferTest {
         assertEquals("A20", cb.readData());
     }
 
+    @Test
+    public void set_new_size_of_buffer_to_14_and_checking_it() {
+        CircularBuffer cb = new CircularBuffer();
+        int newBufferSize = 14;
+        cb.setSize(newBufferSize);
+        boolean result = cb.isItEqualtoCurrentSize(newBufferSize);
+        assertTrue("This isn't set to new size yet", result);
+    }
+
 
 }
