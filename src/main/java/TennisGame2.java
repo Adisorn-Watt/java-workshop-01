@@ -31,8 +31,8 @@ public class TennisGame2 {
         if (isDeuce) {
             return  "Deuce";
         }
-        if (player1Point == player2Point && player1Point < 3) {
-            // equal score but not deuce
+        boolean equal_but_not_deuce = player1Point == player2Point && player1Point < 3;
+        if (equal_but_not_deuce) {
             score = getResultInTennisPattern(player1Point);
             score += "-All";
         }
