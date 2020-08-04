@@ -37,14 +37,14 @@ public class TennisGame2 {
         }
 
 
-        if (player1Point > 0 && player2Point ==0) {
-            // player1 any point vs player2 0 point
+        boolean any_point_vs_love = player1Point > 0 && player2Point == 0;
+        if (any_point_vs_love) {
             player1Result = textScores(player1Point);
             player2Result = "Love";
             score = player1Result + "-" + player2Result;
         }
-        if (player2Point > 0 && player1Point ==0) {
-            // player1 0 point vs player2 any point
+        boolean love_vs_any_point = player2Point > 0 && player1Point == 0;
+        if (love_vs_any_point) {
             player2Result = textScores(player2Point);
             player1Result = "Love";
             score = player1Result + "-" + player2Result;
