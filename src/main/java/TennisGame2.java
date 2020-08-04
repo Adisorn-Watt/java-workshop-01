@@ -29,7 +29,7 @@ public class TennisGame2 {
 
         boolean isDeuce = player1Point == player2Point && player1Point >= 3;
         if (isDeuce) {
-            score = "Deuce";
+            return  "Deuce";
         }
         if (player1Point == player2Point && player1Point < 3) {
             // equal score but not deuce
