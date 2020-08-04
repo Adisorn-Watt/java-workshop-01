@@ -1,36 +1,35 @@
 public class CircularBuffer {
-    private int bufferSize = 10;
-    private String[] buffer = new String[10];
+    private final int bufferSize;
+    private final String[] buffer; //final can be set value in constructor only
     private int readPointer;
     private int writePointer;
 
+    // Default constructor
+    public CircularBuffer() {
+        this(10);
+    }
+
+    // Overload constructor
+    public CircularBuffer(int size) {
+        this.bufferSize = size;
+        this.buffer = new String[bufferSize];
+    }
+
     public boolean isEmpty() {
-        for(int i=0; i<10; i++) {
-            if(this.buffer[readPointer] == null) {
-                readPointer++;
-            }else {
-                return false;
-            }
-        }
-        return readPointer == 10;
+        return readPointer == writePointer;
     }
 
     public void writeData(String input) {
-        this.buffer[writePointer++] = input;
         if(writePointer == 10) { //reset position
-            writePointer = 0;
+         writePointer = 0;
         }
+        this.buffer[writePointer++] = input;
     }
 
     public boolean isFull() {
-        for(int i=0; i<10; i++) {
-            if(this.buffer[readPointer] != null) {
-                readPointer++;
-            }else {
-                return false;
-            }
-        }
-        return readPointer == 10;
+        System.out.println(writePointer);
+        System.out.println(bufferSize);
+        return writePointer >= bufferSize;
     }
 
     public String readData() {
@@ -38,10 +37,11 @@ public class CircularBuffer {
     }
 
     public void setSize(int newBufferSize) {
-        this.buffer = new String[newBufferSize];
+        //this.buffer = new String[newBufferSize];
+        new CircularBuffer(newBufferSize);
     }
 
-    public boolean isItEqualtoCurrentSize(int newBufferSize) {
+    public boolean isItEqualCurrentSize(int newBufferSize) {
         return this.buffer.length == newBufferSize;
     }
 }
