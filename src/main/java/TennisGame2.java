@@ -10,17 +10,25 @@ public class TennisGame2 {
         this.player2Name = player2Name;
     }
 
+    public String getResultInTennisPattern(int point) {
+        switch (point) {
+            case 0:
+                return "Love";
+            case 1:
+                return "Fifteen";
+            case 2:
+                return "Thirty";
+        }
+        return "Forty";
+    }
+
     public String getScore() {
-        String player1Result = "";
-        String player2Result = "";
+        String player1Result;
+        String player2Result;
         String score = "";
         if (player1Point == player2Point && player1Point < 4) {
-            if (player1Point ==0)
-                score = "Love";
-            if (player1Point ==1)
-                score = "Fifteen";
-            if (player1Point ==2)
-                score = "Thirty";
+            // equal score but not deuce
+            score = getResultInTennisPattern(player1Point);
             score += "-All";
         }
         if (player1Point == player2Point && player1Point >=3) {
@@ -28,48 +36,28 @@ public class TennisGame2 {
         }
 
         if (player1Point > 0 && player2Point ==0) {
-            if (player1Point ==1)
-                player1Result = "Fifteen";
-            if (player1Point ==2)
-                player1Result = "Thirty";
-            if (player1Point ==3)
-                player1Result = "Forty";
-
+            // player1 any point vs player2 0 point
+            player1Result = getResultInTennisPattern(player1Point);
             player2Result = "Love";
             score = player1Result + "-" + player2Result;
         }
         if (player2Point > 0 && player1Point ==0) {
-            if (player2Point ==1)
-                player2Result = "Fifteen";
-            if (player2Point ==2)
-                player2Result = "Thirty";
-            if (player2Point ==3)
-                player2Result = "Forty";
-
+            // player1 0 point vs player2 any point
+            player2Result = getResultInTennisPattern(player2Point);
             player1Result = "Love";
             score = player1Result + "-" + player2Result;
         }
 
         if (player1Point > player2Point && player1Point < 4) {
-            if (player1Point ==2)
-                player1Result="Thirty";
-            if (player1Point ==3)
-                player1Result="Forty";
-            if (player2Point ==1)
-                player2Result="Fifteen";
-            if (player2Point ==2)
-                player2Result="Thirty";
+            // player1 > player2 but p1 < 4
+            player1Result = getResultInTennisPattern(player1Point);
+            player2Result = getResultInTennisPattern(player2Point);
             score = player1Result + "-" + player2Result;
         }
         if (player2Point > player1Point && player2Point < 4) {
-            if (player2Point ==2)
-                player2Result="Thirty";
-            if (player2Point ==3)
-                player2Result="Forty";
-            if (player1Point ==1)
-                player1Result="Fifteen";
-            if (player1Point ==2)
-                player1Result="Thirty";
+            // player1 < player2 but p2 < 4
+            player1Result = getResultInTennisPattern(player1Point);
+            player2Result = getResultInTennisPattern(player2Point);
             score = player1Result + "-" + player2Result;
         }
 
@@ -90,20 +78,20 @@ public class TennisGame2 {
         return score;
     }
 
-    public void p1Score() {
+    public void player1Score() {
         player1Point++;
     }
 
-    public void p2Score() {
+    public void player2Score() {
         player2Point++;
     }
 
     public void wonPoint(String player) {
         // if (player.equals("player1")) // 1  => NullPointerException (NPE) => There's a change to access Null
         if ("player1".equals(player)) { // 2 (Suggestion) => Null Safety => There's no change to access Null
-            p1Score();
+            player1Score();
         }else {
-            p2Score();
+            player2Score();
         }
     }
 }
