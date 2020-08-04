@@ -52,15 +52,11 @@ public class TennisGame2 {
 
         if (player1Point > player2Point && player1Point < 4) {
             // player1 > player2 but p1 < 4
-            player1Result = textScores(player1Point);
-            player2Result = textScores(player2Point);
-            score = player1Result + "-" + player2Result;
+            return textScores(player1Point) + "-" + textScores(player2Point);
         }
         if (player2Point > player1Point && player2Point < 4) {
             // player1 < player2 but p2 < 4
-            player1Result = textScores(player1Point);
-            player2Result = textScores(player2Point);
-            score = player1Result + "-" + player2Result;
+            return textScores(player1Point) + "-" + textScores(player2Point);
         }
 
         // Make playerName dynamic
