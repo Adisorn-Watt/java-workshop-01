@@ -26,14 +26,17 @@ public class TennisGame2 {
         String player1Result;
         String player2Result;
         String score = "";
-        if (player1Point == player2Point && player1Point < 4) {
+
+        boolean isDeuce = player1Point == player2Point && player1Point >= 3;
+        if (isDeuce) {
+            score = "Deuce";
+        }
+        if (player1Point == player2Point && player1Point < 3) {
             // equal score but not deuce
             score = getResultInTennisPattern(player1Point);
             score += "-All";
         }
-        if (player1Point == player2Point && player1Point >=3) {
-            score = "Deuce";
-        }
+
 
         if (player1Point > 0 && player2Point ==0) {
             // player1 any point vs player2 0 point
