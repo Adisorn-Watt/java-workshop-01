@@ -25,6 +25,6 @@
 + TC06 => buffer_should_be_overwritten_2nd_times_at_buffer_size_10_by_writing_21_times
 + TC07 => set_new_size_of_buffer_to_14_and_checking_it
 
-###Refactor Workshop-04
+## Refactor Workshop-04
 + add getResultInTennisPattern() method then delete if condition in some method to decrease redundant of "if"
 
