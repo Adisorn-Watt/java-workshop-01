@@ -37,23 +37,23 @@ public class TennisGame2 {
         }
 
 
-        boolean any_point_vs_love = player1Point > 0 && player2Point == 0 && player1Point <= 3;
-        if (any_point_vs_love) {
-            return textScores(player1Point) + "-" + textScores(player2Point);
-        }
-        boolean love_vs_any_point = player2Point > 0 && player1Point == 0  && player2Point <= 3;
-        if (love_vs_any_point) {
-            return textScores(player1Point) + "-" + textScores(player2Point);
-        }
-
-        if (player1Point > player2Point && player1Point < 4) {
-            // player1 > player2 but p1 < 4
-            return textScores(player1Point) + "-" + textScores(player2Point);
-        }
-        if (player2Point > player1Point && player2Point < 4) {
-            // player1 < player2 but p2 < 4
-            return textScores(player1Point) + "-" + textScores(player2Point);
-        }
+//        boolean any_point_vs_love = player1Point > 0 && player2Point == 0 && player1Point <= 3;
+//        if (any_point_vs_love) {
+//            return textScores(player1Point) + "-" + textScores(player2Point);
+//        }
+//        boolean love_vs_any_point = player2Point > 0 && player1Point == 0  && player2Point <= 3;
+//        if (love_vs_any_point) {
+//            return textScores(player1Point) + "-" + textScores(player2Point);
+//        }
+//
+//        if (player1Point > player2Point && player1Point < 4) {
+//            // player1 > player2 but p1 < 4
+//            return textScores(player1Point) + "-" + textScores(player2Point);
+//        }
+//        if (player2Point > player1Point && player2Point < 4) {
+//            // player1 < player2 but p2 < 4
+//            return textScores(player1Point) + "-" + textScores(player2Point);
+//        }
 
         // Win
         if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2) {
@@ -70,9 +70,7 @@ public class TennisGame2 {
         if (player2Point > player1Point && player1Point >= 3 && (player2Point-player1Point)==1) {
             return  "Advantage " + player2Name;
         }
-
-
-        return score;
+        return textScores(player1Point) + "-" + textScores(player2Point);
     }
 
     public void player1Score() {
