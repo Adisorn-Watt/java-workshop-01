@@ -23,10 +23,6 @@ public class TennisGame2 {
     }
 
     public String getScore() {
-        String player1Result;
-        String player2Result;
-        String score = "";
-
         boolean isDeuce = player1Point == player2Point && player1Point >= 3;
         if (isDeuce) {
             return  "Deuce";
@@ -35,7 +31,7 @@ public class TennisGame2 {
         if (equal_but_not_deuce) {
             return textScores(player1Point) + "-All";
         }
-        
+
         // Win
         if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2) {
             return  "Win for " + player1Name;
