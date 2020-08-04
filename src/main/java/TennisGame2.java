@@ -35,26 +35,7 @@ public class TennisGame2 {
         if (equal_but_not_deuce) {
             return textScores(player1Point) + "-All";
         }
-
-
-//        boolean any_point_vs_love = player1Point > 0 && player2Point == 0 && player1Point <= 3;
-//        if (any_point_vs_love) {
-//            return textScores(player1Point) + "-" + textScores(player2Point);
-//        }
-//        boolean love_vs_any_point = player2Point > 0 && player1Point == 0  && player2Point <= 3;
-//        if (love_vs_any_point) {
-//            return textScores(player1Point) + "-" + textScores(player2Point);
-//        }
-//
-//        if (player1Point > player2Point && player1Point < 4) {
-//            // player1 > player2 but p1 < 4
-//            return textScores(player1Point) + "-" + textScores(player2Point);
-//        }
-//        if (player2Point > player1Point && player2Point < 4) {
-//            // player1 < player2 but p2 < 4
-//            return textScores(player1Point) + "-" + textScores(player2Point);
-//        }
-
+        
         // Win
         if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2) {
             return  "Win for " + player1Name;
