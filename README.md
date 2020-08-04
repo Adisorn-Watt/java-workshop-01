@@ -25,6 +25,26 @@
 + TC06 => buffer_should_be_overwritten_2nd_times_at_buffer_size_10_by_writing_21_times
 + TC07 => set_new_size_of_buffer_to_14_and_checking_it
 
-###Refactor Workshop-04
+### Refactor Workshop-04
 + add getResultInTennisPattern() method then delete if condition in some method to decrease redundant of "if"
+
+### Refactor Workshop-05
++ Replace Hard code
++ Introduce Variable to "isDeuce" case and recondition in "equal" case
++ Return value in "isDeuce" directly instead using "score" variable
++ Introduce Variable to "equal" case
++ Rename getResultInTennisPattern() method to textScores()
++ Return value in "equal" case directly instead using "score" variable
++ Introduce Variable to "Any score vs Love" cases for both sides of players
++ Return value directly in cases of "1 player have scored more than another player" for both side of players
++ Edit condition in cases of "Any point vs Love", also make them return value directly
++ Edit condition in cases of "Advantage", also make them return value directly
++ Make "Win" cases return value directly
++ Include 4 cases together :    
+1,2 - "Any score vs Love"   
+3,4 - "1 player have scored more than another player"   
+by return them directly instead of return "score" variable at the end of the method
++ Delete old 4 cases which commented
++ Delete unuse variables
++ Introduce variable to "Win" and "Advantage" cases
 
