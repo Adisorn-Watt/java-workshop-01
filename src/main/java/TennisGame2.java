@@ -33,18 +33,22 @@ public class TennisGame2 {
         }
 
         // Win
-        if (player1Point >=4 && player2Point >=0 && (player1Point - player2Point)>=2) {
+        boolean player1Win = player1Point >= 4 && player2Point >= 0 && (player1Point - player2Point) >= 2;
+        if (player1Win) {
             return  "Win for " + player1Name;
         }
-        if (player2Point >=4 && player1Point >=0 && (player2Point - player1Point)>=2) {
+        boolean player2Win = player2Point >= 4 && player1Point >= 0 && (player2Point - player1Point) >= 2;
+        if (player2Win) {
             return  "Win for " + player2Name;
         }
 
         // Advantage
-        if (player1Point > player2Point && player2Point >= 3 && (player1Point-player2Point)==1) {
+        boolean player1Advantage = player1Point > player2Point && player2Point >= 3 && (player1Point - player2Point) == 1;
+        if (player1Advantage) {
             return  "Advantage " + player1Name;
         }
-        if (player2Point > player1Point && player1Point >= 3 && (player2Point-player1Point)==1) {
+        boolean player2Advantage = player2Point > player1Point && player1Point >= 3 && (player2Point - player1Point) == 1;
+        if (player2Advantage) {
             return  "Advantage " + player2Name;
         }
         return textScores(player1Point) + "-" + textScores(player2Point);
