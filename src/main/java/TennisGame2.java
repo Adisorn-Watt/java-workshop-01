@@ -10,7 +10,7 @@ public class TennisGame2 {
         this.player2Name = player2Name;
     }
 
-    public String getResultInTennisPattern(int point) {
+    public String textScores(int point) {
         switch (point) {
             case 0:
                 return "Love";
@@ -33,34 +33,34 @@ public class TennisGame2 {
         }
         boolean equal_but_not_deuce = player1Point == player2Point && player1Point < 3;
         if (equal_but_not_deuce) {
-            score = getResultInTennisPattern(player1Point);
+            score = textScores(player1Point);
             score += "-All";
         }
 
 
         if (player1Point > 0 && player2Point ==0) {
             // player1 any point vs player2 0 point
-            player1Result = getResultInTennisPattern(player1Point);
+            player1Result = textScores(player1Point);
             player2Result = "Love";
             score = player1Result + "-" + player2Result;
         }
         if (player2Point > 0 && player1Point ==0) {
             // player1 0 point vs player2 any point
-            player2Result = getResultInTennisPattern(player2Point);
+            player2Result = textScores(player2Point);
             player1Result = "Love";
             score = player1Result + "-" + player2Result;
         }
 
         if (player1Point > player2Point && player1Point < 4) {
             // player1 > player2 but p1 < 4
-            player1Result = getResultInTennisPattern(player1Point);
-            player2Result = getResultInTennisPattern(player2Point);
+            player1Result = textScores(player1Point);
+            player2Result = textScores(player2Point);
             score = player1Result + "-" + player2Result;
         }
         if (player2Point > player1Point && player2Point < 4) {
             // player1 < player2 but p2 < 4
-            player1Result = getResultInTennisPattern(player1Point);
-            player2Result = getResultInTennisPattern(player2Point);
+            player1Result = textScores(player1Point);
+            player2Result = textScores(player2Point);
             score = player1Result + "-" + player2Result;
         }
 
